@@ -1,0 +1,247 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  header {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  #search-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #search-input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  #search-button,
+  #random-button,
+  #back-button {
+    padding: 12px 18px;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  #search-button:hover,
+  #random-button:hover,
+  #back-button:hover {
+    background-color: rgb(81, 119, 5);
+  }
+  #quote-section {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #quote-text {
+    font-size: 24px;
+    font-style: italic;
+    color: #555;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #recipes-section {
+    margin-top: 20px;
+  }
+  
+  #recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Recipe Card */
+  .recipe-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    flex: 1 1 calc(25% - 20px); /* Default: 4 cards per row */
+    max-width: calc(25% - 20px);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .recipe-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .recipe-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .recipe-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Recipe Details */
+  #recipe-details-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #recipe-details-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  ul,
+  ol {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+  
+  ul li,
+  ol li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  footer{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    #search-input {
+      width: 90%;
+    }
+  
+    #recipes-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .recipe-card {
+      flex: 1 1 100%; /* Single-column for mobile */
+      max-width: 100%;
+    }
+  
+    #recipe-details-container {
+      padding: 15px;
+    }
+  
+    #recipe-details-container img {
+      width: 100%;
+    }
+  
+    #search-button,
+    #random-button,
+    #back-button {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 900px) {
+    #search-input {
+      width: 80%;
+    }
+  
+    #recipes-container {
+      flex-wrap: wrap;
+    }
+  
+    .recipe-card {
+      flex: 1 1 calc(50% - 20px); /* Two cards per row for tablets */
+      max-width: calc(50% - 20px);
+    }
+  
+    #recipe-details-container {
+      padding: 20px;
+    }
+  }
+  
+  @media (min-width: 900px) and (max-width: 1200px) {
+    #search-input {
+      width: 70%;
+    }
+  
+    #recipes-container {
+      flex-wrap: wrap;
+    }
+  
+    .recipe-card {
+      flex: 1 1 calc(33.33% - 20px); /* Three cards per row for laptops */
+      max-width: calc(33.33% - 20px);
+    }
+  
+    #search-button,
+    #random-button,
+    #back-button {
+      font-size: 16px;
+    }
+  
+    #recipe-details-container {
+      max-width: 800px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    #search-input {
+      width: 50%;
+    }
+  
+    #recipes-container {
+      flex-wrap: wrap;
+    }
+  
+    .recipe-card {
+      flex: 1 1 calc(25% - 20px); /* Four cards per row for large screens */
+      max-width: calc(25% - 20px);
+    }
+  
+    #recipe-details-container {
+      max-width: 900px;
+    }
+  }
+  
+  /* Single Card Adjustment */
+  #recipes-container.single-card {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  
+  .recipe-card.single {
+    flex: 1 1 60%; /* Larger card for single recipe */
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  
